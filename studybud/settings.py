@@ -27,10 +27,9 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = False
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1').split(',')
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -148,6 +147,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # In production, you should set this to a comma-separated string of your trusted origins in your .env file
 # e.g., CSRF_TRUSTED_ORIGINS=https://*.yourdomain.com,https://yourdomain.com
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'http://127.0.0.1:8000,http://localhost:8000').split(',')
+
+CSRF_TRUSTED_ORIGINS = ['*']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
