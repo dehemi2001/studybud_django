@@ -148,6 +148,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 # In production, you should set this to a comma-separated string of your trusted origins in your .env file
 # e.g., CSRF_TRUSTED_ORIGINS=https://*.yourdomain.com,https://yourdomain.com
 
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://*', 'http://*']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
